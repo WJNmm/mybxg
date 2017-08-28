@@ -11,6 +11,7 @@
         //去掉路径中的第一个/
         $path = $_SERVER['PATH_INFO'];
         $str = substr($path,1);// main/index
+        //该方法与js中的split类似
         //分割路径和文件名称
         $arr = explode('/',$str);
         if(count($arr) == 2){
@@ -28,5 +29,13 @@
     //         /teacher/list
     //         /teacher/add
     //在当前页面嵌入一个子页面
+    //常用API
+    /*
+    1.array_key_exists()判断数组中是否包含指定的key
+    2.substr()截取字符串
+    3.explode()分割字符串
+    4.count 统计数组的长度
+    5.数组的基本使用*/
+
     include('./views/'.$dir.'/'.$filename.'.html');
 ?>
