@@ -1,4 +1,4 @@
-define(['jquery'],function($){
+define(['jquery','cookie'],function($){
 	//NProgress.start();
 	//NProgress.done();
 	//控制左侧菜单的折叠和展开
@@ -17,7 +17,21 @@ define(['jquery'],function($){
 			}
 
 		});
-	})
+	});
+	//验证是否登录
+	var sessionId = $.cookie('PHPSESSID');
+	//console.log(location.pathname);
+	if(!sessionId && location.pathname != '/main/login') {
+		//sessionID不存在重新跳转到登录页
+		location.href = '/main/login';
+	}
+	//console.log(sessionId);
+	//获取登录信息
+	var loginInfo = $.cookie('loginInfo');
+	var info = JSON.parse(loginInfo);
+	console.log(info);
+	$('.profile img').attr('src',info.tc_avatar);
+	$('.profile h4').html(info.tc_name);
 });
 
 
