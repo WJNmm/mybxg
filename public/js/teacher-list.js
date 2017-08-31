@@ -1,4 +1,6 @@
 define(['jquery','template','util','bootstrap'],function($,template,util){
+    var ret = util.qs('flag');
+    console.log(ret);
     //console.log(location.pathname);
     //设置导航菜单高亮选中
     util.setMenu(location.pathname);
