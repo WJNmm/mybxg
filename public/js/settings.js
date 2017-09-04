@@ -21,8 +21,10 @@ define(['jquery','template','util','ckeditor','uploadify','datepicker','language
         fileObjName : 'tc_avatar',
         onUploadSuccess : function(f,data){
           var data = JSON.parse(data);
+          // var data = eval('(' +data+ ')');
+          console.log(data);
           // 重置头像的图片地址
-          $('.preview img').attr('src',data.result.path);
+          // $('.preview img').attr('src',data.result.path);
         }
       });
       // 处理省市县三级联动
