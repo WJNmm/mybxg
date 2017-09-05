@@ -20,7 +20,7 @@ define(['jquery','template','util','ckeditor','uploadify','datepicker','language
         uploader : '/api/uploader/avatar',
         fileObjName : 'tc_avatar',
         onUploadSuccess : function(f,data){
-          var data = JSON.parse(data);
+          var data = JSON.parse(data;
           // var data = eval('(' +data+ ')');
           console.log(data);
           // 重置头像的图片地址
